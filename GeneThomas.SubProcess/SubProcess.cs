@@ -336,6 +336,9 @@ namespace GeneThomas.SubProcess
         public static readonly _SentinalStream Pipe = _SentinalStream.Pipe;
         public static readonly _SentinalStream ToOut = _SentinalStream.ToOut;
 
+	///<summary>
+	///	
+	///
         public bool HasExited
         {
             get
@@ -346,6 +349,9 @@ namespace GeneThomas.SubProcess
             }
         }
 
+	///<summary>
+	///Returns true of the sb-process is sill runnning.
+	///</summary>
         public bool IsAlive
         {
             get
@@ -356,6 +362,9 @@ namespace GeneThomas.SubProcess
             }
         }
 
+	///<summary>
+	///The number that the sub-process exited with.Traditionally 0 means a good exit, and non-ero means a problem occured.
+	///</summar>
         public int ExitCode
         {
             get
@@ -376,6 +385,11 @@ namespace GeneThomas.SubProcess
             }
         }
 
+	/// <summary>
+        /// Returns all stdout that has been captured
+        /// </summary>
+	/// Out must be to SubProcess.Capture before Start()ing.
+        /// Encoding set in OutEncoding, defaults to UTF-8
         public string OutputString
         {
             get
@@ -389,6 +403,11 @@ namespace GeneThomas.SubProcess
             }
         }
         
+        /// <summary>
+        /// Get the Stream for stdout
+        /// </summary>
+	/// Out must be to SubProcess.Pipe before Start()ing.
+        /// Encoding set in OutEncoding, defaults to UTF-8
         public Stream OutputStream
         {
             get
@@ -404,6 +423,7 @@ namespace GeneThomas.SubProcess
         /// <summary>
         /// Get the TextReader for stdout
         /// </summary>
+	/// Out must be to SubProcess.Pipe before Start()ing.
         /// Encoding set in OutEncoding, defaults to UTF-8
         public TextReader OutputReader
         {
@@ -456,6 +476,10 @@ namespace GeneThomas.SubProcess
             }
         }
 
+	///<summary>
+	/// Write the given bytes, from `offset` and of length `count` to the processes' standard input. 
+	/// The SubProcess must have been started with `In = SubProcess.Pipe`,
+	///<summary>
         public void Write(byte[] buffer, int offset, int count)
         {
             if (!HasStarted)
@@ -466,6 +490,10 @@ namespace GeneThomas.SubProcess
             Process.StandardInput.BaseStream.Flush();
         }
         
+	///<summary>
+	/// Write the given string to the sub-processes' standard input. The SubProcess must have been started with `In = SubProcess.Pipe`,
+	///the default.
+	///<summary>
         public void Write(string str)
         {
             if (!HasStarted)
@@ -477,6 +505,10 @@ namespace GeneThomas.SubProcess
             InWriter.Write(str);
         }
         
+	///<summary>
+	///Write the given string to the sub-processes' standard input and append a newline. 
+	///The SubProcess must have been started with `In = SubProcess.Pipe`, the default.
+	///<summary>
         public void WriteLine(string str)
         {
             Write(str + "\n");
@@ -548,6 +580,9 @@ namespace GeneThomas.SubProcess
             }
         }
 
+	///<summary>
+	/// Returns the argument list formatted using quotes as required.
+	/// </summary>
         public override string ToString()
         {
             return Args.ToString();

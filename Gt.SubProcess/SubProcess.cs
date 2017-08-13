@@ -7,7 +7,7 @@ using System;
 
 using System.Diagnostics;
 
-namespace GeneThomas.SubProcess
+namespace Gt.SubProcess
 {
     // exit code on Windows is DWORD/UINT (32 bit unsigned)
     // exit code on Unix is unsigned 8 bits (of an int)

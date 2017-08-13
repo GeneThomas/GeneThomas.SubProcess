@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GeneThomas.SubProcess.UnitTests
+namespace Gt.SubProcess.UnitTests
 {
     internal static class OperatingSystemExtensions
     {

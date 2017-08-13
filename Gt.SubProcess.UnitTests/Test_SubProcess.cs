@@ -9,7 +9,7 @@ using NUnit.Framework;
 
 using System.Diagnostics;
 
-namespace GeneThomas.SubProcess.UnitTests
+namespace Gt.SubProcess.UnitTests
 {
     [TestFixture]
     public static class Test_SubProcess

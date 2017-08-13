@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GeneThomas.SubProcess
+namespace Gt.SubProcess
 {
     internal class LogicError: Exception
     {

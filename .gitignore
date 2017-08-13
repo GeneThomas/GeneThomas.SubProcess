@@ -6,3 +6,4 @@ archive/
 *.exe
 *.pdb
 .vs
+echo.args.exe.config

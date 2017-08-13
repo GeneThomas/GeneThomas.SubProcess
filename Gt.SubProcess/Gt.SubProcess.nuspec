@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>Gt.SubProcess</title>
+    <authors>Gene Thomas</authors>
+    <owners>Gene Thomas</owners>
+    <licenseUrl>https://github.com/gene-l-thomas/Gt.SubProcess/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/gene-l-thomas/Gt.SubProcess</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>
+      2017-08-13 1.0.0 Initial release
+    </releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>subprocess process</tags>
+  </metadata>
+</package>

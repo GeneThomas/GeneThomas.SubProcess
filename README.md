@@ -2,6 +2,8 @@
 A library to run sub-processes on .net
 By Gene Thomas
 
+Gt.SubProcess is on nuget - `Install-Package Gt.SubProcess`.
+
 The `Process` class has a unusable string `StartInfo.Arguments`, the rules aroung quoting `"`s are complex so one can not just concatenate arguments to be passed in.
 `SubProcess` takes a list of strings and handles the quoting internally. By default the standed output and standard error are captured into strings, accessable as
 `.OutputString` and `ErrorString` after the sub-process has started.

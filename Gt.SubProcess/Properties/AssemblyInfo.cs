@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("GeneThomas.SubProcess")]
+[assembly: AssemblyTitle("Gt.SubProcess")]
 [assembly: AssemblyDescription("A library to run sub-processes in .net")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("GeneThomas")]
+[assembly: AssemblyCompany("Gene Thomas")]
+[assembly: AssemblyProduct("Gt.SubProcess")]
 [assembly: AssemblyCopyright("Copyright © 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

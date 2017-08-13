@@ -1,5 +1,6 @@
-# GeneThomas.SubProcess
-A library to run sub-processes no .net
+# Gt.SubProcess
+A library to run sub-processes on .net
+By Gene Thomas
 
 The `Process` class has a unusable string `StartInfo.Arguments`, the rules aroung quoting `"`s are complex so one can not just concatenate arguments to be passed in.
 `SubProcess` takes a list of strings and handles the quoting internally. By default the standed output and standard error are captured into strings, accessable as
@@ -22,7 +23,7 @@ If you need more control over the sub-process create and intance of `SubProcess`
 ## SubProcess objects
 
 `SubProcess` objects are created with a list of strings inline, e.g. `var p = new SubProcess("ls", "-l")` or with an `IEnumerable<string>`, e.g. a `List<string>`.
-There a number of properties that can be used to launch and run the program as required.
+There a number of methods and properties that can be used to launch and run the program as required.
 
 ## Startup methods and properties
 

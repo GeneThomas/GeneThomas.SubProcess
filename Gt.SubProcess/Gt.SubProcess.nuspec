@@ -11,6 +11,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>
+      2017-08-13 1.0.1 Call() pass stdout and stderror through
       2017-08-13 1.0.0 Initial release
     </releaseNotes>
     <copyright>Copyright 2017</copyright>

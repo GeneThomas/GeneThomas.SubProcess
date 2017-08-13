@@ -1049,7 +1049,11 @@ namespace Gt.SubProcess
         static public int Call(IEnumerable<string> args)
         {
             // return exit code
-            return new SubProcess(args).Wait();
+            return new SubProcess(args)
+            {
+                Out = SubProcess.Through,
+                Error = SubProcess.Through
+            }.Wait();
         }
 
         /// <summary>

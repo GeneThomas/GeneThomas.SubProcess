@@ -820,5 +820,46 @@ namespace Gt.SubProcess.UnitTests
             Assert.AreEqual(_(line2 + "\n"), sp.ErrorString);
 
         }
+
+        [Test]
+        public static void Test_UseShell()
+        {
+            var s = new SubProcess("ls")
+            {
+                In = SubProcess.Through,
+                Out = SubProcess.Through,
+                Error = SubProcess.Through,
+                UseShell = true
+            };
+            s.Wait();
+
+            Assert.Throws<LogicError>( () => new SubProcess("ls")
+            {
+                // In, Out and Errors redirected
+                UseShell = true
+            }.Wait());
+            Assert.Throws<LogicError>(() => new SubProcess("ls")
+            {
+                // In redirected
+                Out = SubProcess.Through,
+                Error = SubProcess.Through,
+                UseShell = true
+            }.Wait());
+            Assert.Throws<LogicError>(() => new SubProcess("ls")
+            {
+                // Out redirected
+                In = SubProcess.Through,
+                Error = SubProcess.Through,
+                UseShell = true
+            }.Wait());
+            Assert.Throws<LogicError>(() => new SubProcess("ls")
+            {
+                // Error redirected
+                In = SubProcess.Through,
+                Out = SubProcess.Through,
+                UseShell = true
+            }.Wait());
+        }
     }
+
 }

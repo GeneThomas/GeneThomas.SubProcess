@@ -2,7 +2,7 @@
 
 namespace Gt.SubProcess
 {
-    internal class LogicError: Exception
+    public class LogicError: Exception
     {
         /// <summary>
         /// An exception that indicates a fault in the program

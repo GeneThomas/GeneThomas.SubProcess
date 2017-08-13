@@ -165,7 +165,8 @@ namespace Gt.SubProcess
         public Encoding ErrorEncoding = null;
                 
         /// <summary>
-        /// Run via the operating shell
+        /// On Windows run via the operating system shell
+        /// Can launch documents, registered by file type
         /// Use this with care
         /// In, Out and Error can not be redirected if using this
         /// So set all to Through (not the defaults)
@@ -798,7 +799,8 @@ namespace Gt.SubProcess
             Process.StartInfo.FileName = Args.ExecutableName;
             Process.StartInfo.Arguments = Args.ArgumentsString;
             Process.StartInfo.UseShellExecute = UseShell;
-            Process.StartInfo.CreateNoWindow = !ShowWindow;
+            Process.StartInfo.CreateNoWindow = UseShell ? !ShowWindow : false;
+                // true with !UseShellExecute or we don;t get output in the main window
             if (_environment != null) {
                 foreach (var envVar in _environment)
                 {
@@ -925,6 +927,11 @@ namespace Gt.SubProcess
                 Process.StartInfo.RedirectStandardError = true;
             }
 
+            if (UseShell)
+            {
+                if (In != Through || Out != Through || Error != Through)
+                    throw new LogicError("When UseShell is on In, Out and Error must al be Throught");
+            }
             Process.Start();
 
             if (outTarget != null)

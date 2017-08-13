@@ -56,13 +56,13 @@
     <Compile Include="Test_SubProcess.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Gt.SubProcess\Gt.SubProcess.csproj">
-      <Project>{714503b4-a653-487e-83c3-e01f4fc9ee2f}</Project>
-      <Name>GeneThomas.SubProcess</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\Gt.SubProcess\Gt.SubProcess.csproj">
+      <Project>{714503b4-a653-487e-83c3-e01f4fc9ee2f}</Project>
+      <Name>Gt.SubProcess</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

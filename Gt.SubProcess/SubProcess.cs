@@ -930,7 +930,7 @@ namespace Gt.SubProcess
             if (UseShell)
             {
                 if (In != Through || Out != Through || Error != Through)
-                    throw new LogicError("When UseShell is on In, Out and Error must al be Throught");
+                    throw new LogicError("When UseShell is on In, Out and Error must all be Through");
             }
             Process.Start();
 

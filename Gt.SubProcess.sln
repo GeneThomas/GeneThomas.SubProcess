@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneThomas.SubProcess", "GeneThomas.SubProcess\GeneThomas.SubProcess.csproj", "{714503B4-A653-487E-83C3-E01F4FC9EE2F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gt.SubProcess", "Gt.SubProcess\Gt.SubProcess.csproj", "{714503B4-A653-487E-83C3-E01F4FC9EE2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneThomas.SubProcess.UnitTests", "GeneThomas.SubProcess.UnitTests\GeneThomas.SubProcess.UnitTests.csproj", "{D42EC13A-12B9-4E70-BB05-34C6E64906E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gt.SubProcess.UnitTests", "Gt.SubProcess.UnitTests\Gt.SubProcess.UnitTests.csproj", "{D42EC13A-12B9-4E70-BB05-34C6E64906E7}"
 	ProjectSection(ProjectDependencies) = postProject
 		{A188669D-17AB-4AC1-8654-BF70483C3202} = {A188669D-17AB-4AC1-8654-BF70483C3202}
 		{714503B4-A653-487E-83C3-E01F4FC9EE2F} = {714503B4-A653-487E-83C3-E01F4FC9EE2F}

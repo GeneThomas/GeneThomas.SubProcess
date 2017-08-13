@@ -56,7 +56,7 @@
     <Compile Include="Test_SubProcess.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GeneThomas.SubProcess\GeneThomas.SubProcess.csproj">
+    <ProjectReference Include="..\Gt.SubProcess\Gt.SubProcess.csproj">
       <Project>{714503b4-a653-487e-83c3-e01f4fc9ee2f}</Project>
       <Name>GeneThomas.SubProcess</Name>
     </ProjectReference>

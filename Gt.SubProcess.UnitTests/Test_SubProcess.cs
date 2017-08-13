@@ -14,7 +14,7 @@ namespace GeneThomas.SubProcess.UnitTests
     [TestFixture]
     public static class Test_SubProcess
     {
-        const string echoArgs = "GeneThomas.SubProcess/echo-args.exe";
+        const string echoArgs = "Gt.SubProcess/echo-args.exe";
         // echo-args [--error ERROR-TEXT] [--exit EXIT-CODE] [--wait SECONDS] [--pwd] [TEXT...]
 
         static string _(string str)

@@ -26,12 +26,12 @@ There a number of properties that can be used to launch and run the program as r
 
 ## Startup methods and properties
 
-### Add(string arg)
+### `Add(string arg)`
 
 Add an item to the process arguments list.
 e.g. `p.Add("--verbose");`
 
-### Add(string options, string value)
+### `Add(string options, string value)`
 
 Add an item to the process arguments list.
 e.g. `p.Add("--name", "fred");`
@@ -42,7 +42,7 @@ e.g. `p.Add("--name", "fred");`
 
 Returns true if the sub-process has started.
 
-### string ToString()
+### `string ToString()`
 
 Returns the argument list formatted using quotes as required.
 
@@ -62,15 +62,15 @@ Wait for the process to exit, `Start()`ing if required. Throw a `Failed` if the 
 
 Terminate the sub-process. This happens asynchronously, we do not wait for the sub-process to exit.
 
-### int Exit code
+### `int Exit code`
 
 The number that the sub-process exited with.Traditionally 0 means a good exit, and non-ero means a problem occured.
 
-### bool HasExited
+### `bool HasExited`
 
 Returns true of the sb-process is sill runnning.has run and exited.
 
-### bool IsAlive
+### `bool IsAlive`
 
 Returns true of the sb-process is sill runnning.
 
@@ -78,52 +78,52 @@ Returns true of the sb-process is sill runnning.
 
 Returns the name of the sub-process.
 
-### Write(string input)
+### `Write(string input)`
 
 Write the given string to the sub-processes' standard input. The SubProcess must have been started with `In = SubProcess.Pipe`,
 the default.
 
-### Write(byte[] buffer, int offset, int count)
+### `Write(byte[] buffer, int offset, int count)`
 
 Write the given bytes, from `offset` and of length `count` to the processes' standard input. 
 The SubProcess must have been started with `In = SubProcess.Pipe`,
 
-#### WriteLine(string input)
+#### `WriteLine(string input)`
 
 Write the given string to the sub-processes' standard input and append a newline. 
 The SubProcess must have been started with `In = SubProcess.Pipe`, the default.
 
-### string OutputString
+### `string OutputString`
 
 Return a `string` containing the sub-processes' captured standard output.
 The encoding defaults to UTF-8 but can be set using the startup `OutputEncoding` propery.
 The `Out` property must be set to `SubProcess.Capture` or `SubProcess.Pipe` at startup.
 
-### string ErrorString
+### `string ErrorString`
 
 Return a `string` containing the sub-processes' captured standard error.
 The encoding defaults to UTF-8 but can be set using the startup `OutputEncoding` propery.
 The `Error` property must be set to `SubProcess.Capture` or `SubProcess.Pipe` at startup.
 
-### TextReader OutputReader
+### `TextReader OutputReader`
 
 Return a `TextReader` to read the sub-processes' standard output.
 The encoding defaults to UTF-8 but can be set using the startup `OutputEncoding` propery.
 The `Out` property must be set to `Pipe` for this to wok.
 
-### TextReader ErrorReader
+### `TextReader ErrorReader`
 
 Return a `TextReader` to read the sub-processes' standard error.
 The encoding defaults to UTF-8 but can be set using the startup `ErrorEncoding` propery.
 The `Error` property must be set to `Capture` or `Pipe` at startup.
 ` or `Pipe` at startup.
 
-### Stream OutputStream
+### `Stream OutputStream`
 
 Return a `Stream` to read the sub-processes' standard error.
 `Out`must be set to SubProcess.Capture` for this to work.
 
-### Stream ErrorStream
+### `Stream ErrorStream`
 
 Return a `Stream` to read the sub-processes' standard error.
 `Error`must be set to SubProcess.Pipe` for this to work.

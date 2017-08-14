@@ -65,6 +65,25 @@ There a number of methods and properties that can be used to launch and run the 
 
 ## Startup methods and properties
 
+### `Out`
+
+Set how the subprocess's output is handled:
+         
+`Out = new FileStream("output.txt", FileMode.OpenOrCreate);`
+a stream
+`Out = SubProcess.Through`
+let the output be printed to the terminal
+`Out = SubProcess.Capture`
+the default<br>
+to string<br>
+string output = subprocess.OutputString
+`Out = SubProcess.Swallow`
+throw away
+`Out = SubProcess.Pipe`
+read incremenally<br>
+`Stream stream = subprocess.OutputStream`
+```csharp TextReader reader = subprocess.OutputReader```
+
 ### `Add(string arg)`
 
 Add an item to the process arguments list.
@@ -85,7 +104,7 @@ Returns true if the sub-process has started.
 
 Returns the argument list formatted using quotes as required.
 
-### `Start()`
+### `void Start()`
 
 Set the sub-process running.
 
@@ -93,11 +112,11 @@ Set the sub-process running.
 
 Wait for the process to exit, `Start()`ing if required. Returns the processes' exit code.
   
-### `Check()`
+### `void Check()`
 
 Wait for the process to exit, `Start()`ing if required. Throw a `Failed` if the sub-process exits with a non-zero exit code.
 
-### `kill()`
+### `void Kill()`
 
 Terminate the sub-process. This happens asynchronously, we do not wait for the sub-process to exit.
 
@@ -117,17 +136,17 @@ Returns true of the sub-process is still runnning.
 
 Returns the name of the sub-process.
 
-### `Write(string input)`
+### `void Write(string input)`
 
 Write the given string to the sub-processes' standard input. The SubProcess must have been started with `In = SubProcess.Pipe`,
 the default.
 
-### `Write(byte[] buffer, int offset, int count)`
+### `void Write(byte[] buffer, int offset, int count)`
 
 Write the given bytes, from `offset` and of length `count` to the processes' standard input. 
 The SubProcess must have been started with `In = SubProcess.Pipe`,
 
-#### `WriteLine(string input)`
+#### `void WriteLine(string input)`
 
 Write the given string to the sub-processes' standard input and append a newline. 
 The SubProcess must have been started with `In = SubProcess.Pipe`, the default.

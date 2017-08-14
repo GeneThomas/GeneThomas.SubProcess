@@ -91,6 +91,7 @@ namespace Gt.SubProcess
         /// Out = new FileStream("output.txt", FileMode.OpenOrCreate);
         ///       a stream
         /// Out = SubProcess.Through
+        ///       let the output be printed to the terminal
         /// Out = SubProcess.Capture
         ///       the default
         ///       to string
@@ -132,6 +133,7 @@ namespace Gt.SubProcess
         /// Error = new FileStream("error.txt", FileMode.OpenOrCreate);
         ///       a stream
         /// Error = SubProcess.Through
+        ///       let the error output be printed to the terminal
         /// Error = SubProcess.Capture
         ///       the default
         ///       to string
@@ -139,7 +141,7 @@ namespace Gt.SubProcess
         /// Error = SubProcess.Swallow
         ///       throw away
         /// Error = SubProcess.ToOut
-        ///     redirect Error to Out
+        ///       redirect Error to Out
         /// Error = SubProcess.Pipe
         ///       read incremenally
         ///       Stream stream = subprocess.ErrorStream

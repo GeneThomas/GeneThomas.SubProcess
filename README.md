@@ -1,5 +1,5 @@
 # Gt.SubProcess
-A library to run sub-processes on .net
+A library to run sub-processes on .net<br>
 By Gene Thomas
 
 Gt.SubProcess is on nuget - `Install-Package Gt.SubProcess`.

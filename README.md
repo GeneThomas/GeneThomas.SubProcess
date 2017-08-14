@@ -14,7 +14,7 @@ SubProcess has a number of static methods which do not require one to create a S
 
 `SubProcess.Call("ls", "-l", "-r", "-t")` and `SubProcess.Call(IEnumerable<string>)` run the program and return it's `int` return code.
 
-`SubProcess.CheckCall("ls", "-l", "-r", "-t")` and `SubProcess.CheckCall(IEnumerable<string>)` run the program and throw a `Failed` exception if the program exits with a non zero exid code.
+`SubProcess.CheckCall("ls", "-l", "-r", "-t")` and `SubProcess.CheckCall(IEnumerable<string>)` run the program and throw a `Failed` exception if the program exits with a non zero exit code.
 
 `SubProcess.CheckOutput("ls", "-l", "-r", "-t").With(expectedString)` and `CheckOutput(IEnumerable<string>).With(expectedString)` run the program, throw 
 `Failed` exception if it exits with a non-zero exide code and throw an `UnexpectedOutput` exception if the program's standed output is not as expected, 
@@ -65,17 +65,17 @@ Wait for the process to exit, `Start()`ing if required. Throw a `Failed` if the 
 
 Terminate the sub-process. This happens asynchronously, we do not wait for the sub-process to exit.
 
-### `int Exit code`
+### `int ExitCode`
 
-The number that the sub-process exited with.Traditionally 0 means a good exit, and non-ero means a problem occured.
+The number that the sub-process exited with. Traditionally 0 means a good exit, and non-zero means a problem occured.
 
 ### `bool HasExited`
 
-Returns true of the sb-process is sill runnning.has run and exited.
+Returns true of the sub-process has run and exited.
 
 ### `bool IsAlive`
 
-Returns true of the sb-process is sill runnning.
+Returns true of the sub-process is still runnning.
 
 ### `string ExecutableName`
 

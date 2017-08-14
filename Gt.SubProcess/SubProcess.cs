@@ -165,8 +165,7 @@ namespace Gt.SubProcess
         public Encoding ErrorEncoding = null;
                 
         /// <summary>
-        /// On Windows run via the operating system shell
-        /// Can launch documents, registered by file type
+        /// Run via the operating shell
         /// Use this with care
         /// In, Out and Error can not be redirected if using this
         /// So set all to Through (not the defaults)
@@ -337,9 +336,9 @@ namespace Gt.SubProcess
         public static readonly _SentinalStream Pipe = _SentinalStream.Pipe;
         public static readonly _SentinalStream ToOut = _SentinalStream.ToOut;
 
-	///<summary>
-	///	
-	///
+        ///<summary>
+        ///Returns true of the sub-process has run and exited.	
+        ///</summary>
         public bool HasExited
         {
             get
@@ -364,7 +363,7 @@ namespace Gt.SubProcess
         }
 
 	///<summary>
-	///The number that the sub-process exited with.Traditionally 0 means a good exit, and non-ero means a problem occured.
+	///The number that the sub-process exited with. Traditionally 0 means a good exit, and non-zero means a problem occured.
 	///</summar>
         public int ExitCode
         {
@@ -927,11 +926,6 @@ namespace Gt.SubProcess
                 Process.StartInfo.RedirectStandardError = true;
             }
 
-            if (UseShell)
-            {
-                if (In != Through || Out != Through || Error != Through)
-                    throw new LogicError("When UseShell is on In, Out and Error must all be Through");
-            }
             Process.Start();
 
             if (outTarget != null)
@@ -1084,7 +1078,11 @@ namespace Gt.SubProcess
         static public void CheckCall(IEnumerable<string> args)
         {
             // throw on error
-            new SubProcess(args).Check();            
+            new SubProcess(args)
+            {
+                Out = SubProcess.Through,
+                Error = SubProcess.Through
+            }.Check();
         }
 
         /// <summary>

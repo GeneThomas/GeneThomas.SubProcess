@@ -11,7 +11,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>
-      2017-08-14 1.0.4 Better docs
+      2017-08-14 1.0.5 Better docs
       2017-08-13 1.0.3 Better errors messages by explicit checks when UseShell
       2017-08-13 1.0.2 Fix on windows to get output in window when Out=Through
       2017-08-13 1.0.1 Call() pass stdout and stderror through

@@ -19,7 +19,9 @@ The `Process` class has a unusable string `StartInfo.Arguments`, the rules aroun
         {
             static int Main(string[] args) { 
                 try {
-                    SubProcess.CheckCall("ls", "-l");
+                    SubProcess.Call("ls", "-l");
+
+                    SubProcess.CheckCall("psql", "my-database", "fred");
                         // throws if exits with non 0 exit code
 
                     SubProcess p = new SubProcess("ssh", "me@mysite.com")

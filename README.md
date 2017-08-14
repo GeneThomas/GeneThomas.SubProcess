@@ -65,6 +65,20 @@ There a number of methods and properties that can be used to launch and run the 
 
 ## Startup methods and properties
 
+### `In`
+
+Set how the subprocess's input is handled:
+         
+* `In = new FileStream("input.txt", FileMode.Open);`<br>
+a stream<br>
+* `In = SubProcess.Through`<br>
+Read from the terminal
+* `In = SubProcess.Swallow`<br>
+no input<br>
+* `In = SubProcess.Pipe`<br>
+the default<br>
+allows `Write()`/`WriteLine()` of string or byte[]s<br>
+
 ### `Out`
 
 Set how the subprocess's output is handled:
@@ -104,6 +118,27 @@ redirect Error to Out<br>
 read incremenally<br>
 `Stream stream = subprocess.ErrorStream`<br>
 `TextReader reader = subprocess.ErrorReader`<br>
+
+### `string Directory`
+
+Set the directory to start the process in.
+
+### `Dictionary<string, string> Environment`
+
+Set environment variabled for the process.
+e.g.
+```csharp
+    new SubProcess("my-app") {
+        Environment = {
+            ["NAME"] = "VALUE"
+        }
+    };
+```
+
+### `double Timeout`
+
+Timeout after given number of seconds.<br>
+Throw TimeoutException if the process does not exit in the given time.
 
 ### `Add(string arg)`
 

@@ -52,6 +52,7 @@ namespace Gt.SubProcess
         /// In = new FileStream("input.txt", FileMode.Open);
         ///      a stream
         /// In = SubProcess.Through
+        ///      read from the terminal
         /// In = SubProcess.Swallow
         ///      no input
         /// In = SubProcess.Pipe
@@ -205,6 +206,8 @@ namespace Gt.SubProcess
 
         /// <summary>
         /// Timeout after given number of seconds
+        /// Throw TimeoutException if the process
+        /// does not exit in the given time.
         /// </summary                    
         public double Timeout = 0.0;
         // 0.0 or less means no timeout

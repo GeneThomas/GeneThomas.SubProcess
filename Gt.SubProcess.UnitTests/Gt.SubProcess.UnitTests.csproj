@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="OperatingSystemExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadmeExample.cs" />
     <Compile Include="Test_SubProcess.cs" />
   </ItemGroup>
   <ItemGroup>

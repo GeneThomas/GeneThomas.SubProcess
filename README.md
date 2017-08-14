@@ -8,6 +8,40 @@ The `Process` class has a unusable string `StartInfo.Arguments`, the rules aroun
 `SubProcess` takes a list of strings and handles the quoting internally. By default the standed output and standard error are captured into strings, accessable as
 `.OutputString` and `ErrorString` after the sub-process has started.
 
+```csharp
+    using System;
+    using System.IO;
+    using Gt.SubProcess;
+
+    namespace ReadmeExample
+    {
+        class Program
+        {
+            static int Main(string[] args) { 
+                try {
+                    SubProcess.CheckCall("ls", "-l");
+                        // throws if exits with non 0 exit code
+
+                    SubProcess p = new SubProcess("ssh", "me@mysite.com")
+                    {
+                        Out = new FileStream("ssh-output.txt", FileMode.OpenOrCreate),
+                        Error = SubProcess.Capture,
+                        In = SubProcess.Pipe                    
+                    };
+                    p.Wait();
+
+                    Console.WriteLine(p.ErrorString);
+
+                    return 0; 
+                } catch (Exception e) { 
+                    Console.Error.WriteLine("Fatal Error: " + e.Message); 
+                    return 1; 
+                }
+            } 
+        }
+    }
+```
+
 ## Static methods
 
 SubProcess has a number of static methods which do not require one to create a SubProcess object.

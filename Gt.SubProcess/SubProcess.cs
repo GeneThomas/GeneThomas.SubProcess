@@ -1009,7 +1009,7 @@ namespace Gt.SubProcess
 
         /// <summary>
         /// Kill the process.
-        /// Throw is not started or exited already
+        /// Throw if not started or exited already
         /// Asynchronous, does not wait for the process to exit
         /// Wait() to wait for exit
         /// </summary>
@@ -1023,6 +1023,8 @@ namespace Gt.SubProcess
         /// <summary>
         /// Wait for the process to exit
         /// Throw if exits with a non zero exit code.
+        /// If Error = Capture the exception will 
+        /// contain the stderror from the sub-process.
         /// </summary>
         public void Check()
         {
@@ -1034,6 +1036,8 @@ namespace Gt.SubProcess
         /// <summary>
         /// WaitAsync for the process to exit
         /// Throw if exits with a non zero exit code.
+        /// If Error = Capture the exception will 
+        /// contain the stderror from the sub-process.
         /// </summary>
         async public Task CheckAsync()
         {
@@ -1071,6 +1075,7 @@ namespace Gt.SubProcess
         /// <summary>
         /// Run the program checking that is exits sucessfully
         /// </summary>
+        /// Out and Error are Captured.
         /// If the program exits with a non zero exit code an exception containing 
         /// the standard error output is thrown.
         /// <param name="args">Program name and arguments to the program</param>
@@ -1078,11 +1083,7 @@ namespace Gt.SubProcess
         static public void CheckCall(IEnumerable<string> args)
         {
             // throw on error
-            new SubProcess(args)
-            {
-                Out = SubProcess.Through,
-                Error = SubProcess.Through
-            }.Check();
+            new SubProcess(args).Check();
         }
 
         /// <summary>

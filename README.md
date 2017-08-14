@@ -180,9 +180,10 @@ Throw a `Failed` if the sub-process exits with a non-zero exit code.
 
  `SubProcess` inherits from `IDisposable` so can be used with a `using` block to ensure that the sub-process is terminated.
  e.g.
+ ```csharp
    using (SubProcess p = new SubProcess("find", ".", "-name", "*.exe"))
    {
         // do something
    }
-
+```
 `Kill()` is used if we leave the `using` block without `p` exiting.

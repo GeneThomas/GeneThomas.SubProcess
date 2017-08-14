@@ -138,7 +138,7 @@ e.g.
 ### `double Timeout`
 
 Timeout after given number of seconds.<br>
-Throw TimeoutException if the process does not exit in the given time.
+Throw `TimeoutException` if the process does not exit in the given time.
 
 ### `Add(string arg)`
 

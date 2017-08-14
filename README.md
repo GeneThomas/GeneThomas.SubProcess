@@ -69,17 +69,17 @@ There a number of methods and properties that can be used to launch and run the 
 
 Set how the subprocess's output is handled:
          
-`Out = new FileStream("output.txt", FileMode.OpenOrCreate);`<br>
+* `Out = new FileStream("output.txt", FileMode.OpenOrCreate);`<br>
 a stream<br>
-`Out = SubProcess.Through`<br>
+* `Out = SubProcess.Through`<br>
 let the output be printed to the terminal<br>
-`Out = SubProcess.Capture`<br>
+* `Out = SubProcess.Capture`<br>
 the default<br>
 to string<br>
-string output = subprocess.OutputString<br>
-`Out = SubProcess.Swallow`<br>
+`string output = subprocess.OutputString`<br>
+* `Out = SubProcess.Swallow`<br>
 throw away<br>
-`Out = SubProcess.Pipe`<br>
+* `Out = SubProcess.Pipe`<br>
 read incremenally<br>
 `Stream stream = subprocess.OutputStream`<br>
 `TextReader reader = subprocess.OutputReader`<br>

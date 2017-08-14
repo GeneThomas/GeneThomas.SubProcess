@@ -84,6 +84,27 @@ read incremenally<br>
 `Stream stream = subprocess.OutputStream`<br>
 `TextReader reader = subprocess.OutputReader`<br>
 
+### `Error`
+
+Set how the subprocess's error output is handled:
+
+* `Error = new FileStream("error.txt", FileMode.OpenOrCreate);`<br>
+a stream<br>
+* `Error = SubProcess.Through`<br>
+let the error output be printed to the terminal<br>
+* `Error = SubProcess.Capture`<br>
+the default<br>
+to string<br>
+`string errorMessage = subprocess.ErrorString`<br>
+* `Error = SubProcess.Swallow`<br>
+throw away<br>
+* `Error = SubProcess.ToOut`<br>
+redirect Error to Out<br>
+* `Error = SubProcess.Pipe`<br>
+read incremenally<br>
+`Stream stream = subprocess.ErrorStream`<br>
+`TextReader reader = subprocess.ErrorReader`<br>
+
 ### `Add(string arg)`
 
 Add an item to the process arguments list.

@@ -51,6 +51,7 @@ By default the standard output and standard error are captured into strings, acc
 SubProcess has a number of static methods which do not require one to create a SubProcess object.
 
 `SubProcess.Call("ls", "-l", "-r", "-t")` and `SubProcess.Call(IEnumerable<string>)` run the program and return it's `int` return code.
+Output is not captured.
 
 `SubProcess.CheckCall("ls", "-l", "-r", "-t")` and `SubProcess.CheckCall(IEnumerable<string>)` run the program and throw a `Failed` exception if the program exits with a non zero exit code.
 
